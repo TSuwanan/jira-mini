@@ -100,7 +100,7 @@
 - [x] Postman Collection
 - [x] Dockerfile
 - [x] README
-- [ ] ER-Diagram
+- [x] ER-Diagram
 
 ### Frontend
 - [x] Next.js framework
@@ -124,5 +124,5 @@
 - [x] Git Repository
 - [x] README
 - [x] Swagger / OpenAPI
-- [ ] ER-Diagram
+- [x] ER-Diagram
 - [ ] Written Questions (Markdown/PDF)
