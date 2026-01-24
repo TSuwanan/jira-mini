@@ -111,18 +111,9 @@
 - [x] Separated UI State and Server State
 - [x] Scalable folder structure
 
-### Written Questions
-- [ ] คำถามข้อ 1 - Scalability Bottleneck
-- [ ] คำถามข้อ 2 - AI Feature Integration
-- [ ] คำถามข้อ 3 - Legacy System Experience
-- [ ] คำถามข้อ 4 - Speed vs Correctness vs Scalability
-- [ ] คำถามข้อ 5 - AI Tools in Development
-- [ ] คำถามข้อ 6 - Managing Junior Developers with AI
-- [ ] คำถามข้อ 7 - Production System Responsibility
-
 ### Submission
 - [x] Git Repository
 - [x] README
 - [x] Swagger / OpenAPI
 - [x] ER-Diagram
-- [ ] Written Questions (Markdown/PDF)
+- [x] Written Questions (Markdown/PDF)
