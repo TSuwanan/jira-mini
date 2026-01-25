@@ -49,6 +49,50 @@ Services:
 - API: http://localhost:8000
 - Swagger Docs: http://localhost:8000/swagger
 
+
+### Default Login Credentials
+
+| Role | Email | Password |
+|------|-------|----------|
+| Admin | admin@example.com | admin123 |
+| User | ninna@example.com | user123 |
+| User | mintra@example.com | user123 |
+
+> **หมายเหตุเกี่ยวกับ Password:**
+>
+> รหัสผ่านในตารางด้านบนเป็นรหัสผ่านที่ถูก generate ขึ้นมาเพื่อใช้งานเบื้องต้น ในอนาคตระบบอาจพัฒนาเพิ่มเติมเป็น:
+> - **Force Change Password** - บังคับให้ผู้ใช้เปลี่ยนรหัสผ่านเมื่อเข้าสู่ระบบครั้งแรก
+> - **Email-based Password Setup** - เมื่อ Admin เพิ่มผู้ใช้ใหม่ ระบบจะส่ง Email ให้ผู้ใช้ตั้งรหัสผ่านด้วยตนเอง
+
+> **หมายเหตุ: ทำไมใช้ Email เป็น Username?**
+>
+> ระบบนี้เลือกใช้ Email เป็น Username ด้วยเหตุผลดังนี้:
+> - Email มีความ unique ตามธรรมชาติ ลดโอกาสซ้ำ
+> - ใช้เป็นตัวระบุตัวตนได้ชัดเจน
+> - รองรับการขยายระบบในอนาคต (Email Verification, Forgot Password, Token-based Authentication)
+> - เหมาะกับ Flow การทำงานจริงขององค์กร
+
+### Future Enhancement (ฟีเจอร์ที่วางแผนไว้)
+
+**Flow การสร้างผู้ใช้ในอนาคต:**
+1. Admin สร้าง User ในระบบ
+2. ระบบสร้าง Temporary Token
+3. ส่ง Email ไปยังผู้ใช้
+4. ผู้ใช้กดลิงก์เพื่อยืนยันตัวตน
+5. ตั้งรหัสผ่านใหม่ด้วยตนเอง
+6. เปิดใช้งานบัญชี (Activate Account)
+
+### Security Design
+
+- รหัสผ่านถูก Hash ด้วย **bcrypt** (ไม่เก็บแบบ plain text)
+- Admin ไม่สามารถเห็นรหัสผ่านของผู้ใช้
+- โครงสร้างรองรับการบังคับเปลี่ยนรหัสผ่านในอนาคต
+- สถาปัตยกรรมรองรับ MFA / OAuth ได้ในภายหลัง
+
+> **Note:** โครงสร้างระบบถูกออกแบบให้สามารถต่อยอดด้านความปลอดภัยในอนาคตได้ โดยไม่ต้องปรับเปลี่ยนสถาปัตยกรรมหลัก
+
+---
+
 ### Local Development
 
 #### Backend
